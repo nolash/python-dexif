@@ -24,6 +24,8 @@ def from_fixed(v):
     if len(v) > 2:
         if v[:2] == '0x':
             v = v[2:]
+    if len(v) % 2 != 0:
+        v = '0' + v
     if len(v) < 16:
         raise ValueError('need at least 64 bit hex')
 
